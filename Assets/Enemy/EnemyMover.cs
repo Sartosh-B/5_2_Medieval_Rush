@@ -8,8 +8,27 @@ public class EnemyMover : MonoBehaviour
     [SerializeField] [Range(0f, 5f)] float speed = 1f;
     // Start is called before the first frame update
     void Start()
-    {        
-        StartCoroutine(FollwPatch());       
+    {
+        FindPath();
+        ReturnToStart();
+        StartCoroutine(FollwPatch());
+        
+    }
+    void FindPath()
+    {
+        path.Clear();
+
+        GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Path");
+
+        foreach (GameObject waypoint in waypoints)
+        {
+            path.Add(waypoint.GetComponent<Waypoint>());
+        }
+    }
+
+    void ReturnToStart()
+    {
+        transform.position = path[0].transform.position;
     }
 
     IEnumerator FollwPatch()
@@ -29,5 +48,7 @@ public class EnemyMover : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }                               
         }
+
+        Destroy(gameObject);
     }
 }
