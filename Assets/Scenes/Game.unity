@@ -19625,7 +19625,7 @@ GameObject:
   - component: {fileID: 1292024534}
   - component: {fileID: 1292024533}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GridManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19643,11 +19643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd447fb5cbe4c349ba5d85049736072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  node:
-    coordinates: {x: 2, y: 1}
-    isWalkable: 1
-    isExpored: 0
-    isPath: 0
+  gridsize: {x: 4, y: 3}
 --- !u!4 &1292024534
 Transform:
   m_ObjectHideFlags: 0
@@ -19656,7 +19652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292024532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 127.71266, y: -73.3701, z: 109.870605}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -29343,6 +29339,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5906371754428964942, guid: cd09f7f9200684b4397f752543421e57, type: 3}
   m_PrefabInstance: {fileID: 1968328656}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1969011764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6216358758616600342, guid: 12d6ff67e8ff0c0448358f819ccea179, type: 3}
+  m_PrefabInstance: {fileID: 6216358758402407079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1969011767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969011764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a866591fda2fd48a7746addfe53835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSearchNode:
+    coordinates: {x: 2, y: 1}
+    isWalkable: 0
+    isExpored: 0
+    isPath: 0
 --- !u!1001 &1969066048
 PrefabInstance:
   m_ObjectHideFlags: 0
